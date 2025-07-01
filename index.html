@@ -2,39 +2,80 @@
 <html lang="fa">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>رمزنگاری لینک با حروف فارسی</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Tahoma, sans-serif;
-      direction: rtl;
-      background-color: #f0f0f0;
+      font-family: 'Vazirmatn', Tahoma, sans-serif;
+      background: linear-gradient(135deg, #d0e8f2, #fefefe);
       padding: 20px;
+      margin: 0;
       text-align: center;
+      direction: rtl;
     }
+
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
     textarea {
-      width: 90%;
-      height: 100px;
-      margin-bottom: 10px;
+      width: 100%;
+      max-width: 600px;
+      height: 120px;
+      padding: 12px;
+      margin: 10px auto;
+      font-size: 15px;
       direction: ltr;
-      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      resize: vertical;
+      background-color: #fff;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
     }
+
     button {
-      margin: 5px;
-      padding: 10px 25px;
+      padding: 10px 20px;
+      margin: 10px 5px;
       font-size: 16px;
+      border: none;
+      border-radius: 10px;
       cursor: pointer;
+      background-color: #2a9d8f;
+      color: white;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #21867a;
+    }
+
+    @media (max-width: 600px) {
+      textarea {
+        height: 100px;
+        font-size: 14px;
+      }
+
+      button {
+        width: 80%;
+        font-size: 15px;
+      }
     }
   </style>
 </head>
 <body>
-  <h2>🔐 رمزنگاری لینک‌ها با حروف فارسی</h2>
+  <h2>🔐 رمزنگاری لینک با حروف فارسی</h2>
 
   <textarea id="input" placeholder="🔗 لینک اصلی یا متن رمز شده را اینجا وارد کن"></textarea>
   <br>
   <button onclick="encodeText()">رمزگذاری</button>
   <button onclick="decodeText()">رمزگشایی</button>
-  <br><br>
-  <textarea id="output" readonly placeholder="📤 فقط متن رمز شده یا لینک اولیه اینجاست (برای کپی کردن)"></textarea>
+  <br>
+  <textarea id="output" readonly placeholder="📤 فقط متن رمز شده یا لینک اصلی اینجاست (برای کپی کردن)"></textarea>
 
   <script src="script.js"></script>
 </body>
